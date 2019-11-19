@@ -1,0 +1,6 @@
+{
+  "ignore": [
+    "README.md"
+  ],
+  "ext":"js,mjs,json,html,css,php"
+}

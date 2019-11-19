@@ -1,0 +1,32 @@
+{
+    "name": "auto reload",
+    "description" : "when change your code, the page will reload",
+    "version": "1.0",
+    "manifest_version": 2,
+    "browser_action": {
+      "default_icon": "my_op.png"
+    },
+    // 需要直接注入页面的JS
+    "content_scripts": 
+    [
+        {
+            //"matches": ["http://*/*", "https://*/*"],
+            // "<all_urls>" 表示匹配所有地址
+            "matches": ["http://*/*", "https://*/*"],
+            // 多个JS按顺序注入
+            "js": ["jquery.js", "socket.io.js", "index.js"]
+        }
+    ],
+    // 权限申请
+    "permissions":
+    [
+        "contextMenus", // 右键菜单
+        "tabs", // 标签
+        "notifications", // 通知
+        "webRequest", // web请求
+        "webRequestBlocking",
+        "storage", // 插件本地存储
+        "http://*/*", // 可以通过executeScript或者insertCSS访问的网站
+        "https://*/*" // 可以通过executeScript或者insertCSS访问的网站
+    ]
+}
