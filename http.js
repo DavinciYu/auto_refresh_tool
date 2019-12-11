@@ -6,7 +6,7 @@ const server = http.createServer(app);
 const io = require('socket.io').listen(server);
 
 server.listen(8080, ()=>{
-    console.log("服务已开启");
+    console.log("服务已开启8080");
 }); 
 
 // 给io绑定事件
